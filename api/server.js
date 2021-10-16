@@ -1,7 +1,12 @@
-const express = require("express")
+const express = require("express");
 
-const server = express()
+const server = express();
 
 // DO YOUR MAGIC
+server.use(express.json());
 
-module.exports = server
+server.use('*',(req,res)=>{
+    res.send("API is running");
+}); 
+
+module.exports = server;

@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable('cars', tbl =>{
-    // creates a primary key called id
+    // creates a primary key called id automatically
     tbl.increments()
-    //info taken from metadata
+    //info taken from metadata 
     tbl.string('vin', 17).notNullable().unique()
     tbl.string('make', 128).notNullable()
     tbl.string('model', 130).notNullable()
